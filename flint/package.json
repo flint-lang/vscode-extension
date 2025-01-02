@@ -1,0 +1,45 @@
+{
+  "name": "flint-syntax-highlighter",
+  "displayName": "Flint Syntax Highligher",
+  "description": "Syntax highlighting for the Flint programing language!",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "publisher": "zweiler1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flint-lang/vscode-extension"},
+  "contributes": {
+    "languages": [
+      {
+        "id": "flint",
+        "aliases": [
+          "Flint",
+          "flint"
+        ],
+        "extensions": [
+          ".ft"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "flint",
+        "scopeName": "source.flint",
+        "path": "./syntaxes/flint.tmLanguage.json"
+      }
+    ],
+    "themes": [
+      {
+        "label": "Flint Theme",
+        "uiTheme": "vs-dark",
+        "path": "./themes/flint-color-theme.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Flint",
+  "patterns": [
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#identifiers"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#symbols"
+    }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.flint",
+          "match": "\\b(if|else|while|for)\\b"
+        },
+        {
+          "name": "keyword.threading.flint",
+          "match": "\\b(spawn|sync)\\b"
+        },
+        {
+          "name": "keyword.return.flint",
+          "match": "\\b(return)\\b"
+        },
+        {
+          "name": "keyword.definition.flint",
+          "match": "\\b(data|def|func|entity|enum|variant|error)\\b"
+        },
+        {
+          "name": "keyword.primitive.flint",
+          "match": "\\b(bool|int|flint|str|char|bool|fn)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.flint",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.flint",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "name": "constant.language.flint",
+          "match": "\\b(true|false)\\b"
+        },
+        {
+          "name": "constant.number.flint",
+          "match": "\\b([0-9]+)\\b"
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.flint",
+          "begin": "//",
+          "end": "$"
+        },
+        {
+          "name": "comment.block.flint",
+          "begin": "/\\*",
+          "end": "\\*/"
+        },
+        {
+          "name": "comment.block.documentation.flint",
+          "begin": "/\\*\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "symbols": {
+      "patterns": [
+        {
+          "name": "symbols.separator.flint",
+          "match": ",|;|:"
+        },
+        {
+          "name": "operator.pipe.flint",
+          "match": "\\|>"
+        },
+        {
+          "name": "operator.arrow.flint",
+          "match": "->"
+        },
+        {
+          "name": "operator.calculation.flint",
+          "match": "\\+|-|\\*|/|\\*\\*|\\$"
+        },
+        {
+          "name": "operator.comparison.flint",
+          "match": "==|!=|<|>|<=|>="
+        },
+        {
+          "name": "operator.assignment.flint",
+          "match": "\\+=|-=|\\*=|/="
+        },
+        {
+          "name": "operator.declaration.flint",
+          "match": "=|:="
+        }
+      ]
+    },
+    "identifiers": {
+      "patterns": [
+        {
+          "match": "\\b([A-Z]+)\\b",
+          "name": "identifier.constant.flint"
+        },
+        {
+          "name": "identifier.definition.flint",
+          "match": "\\b(data|def|func|entity|enum|variant|error)\\s+([A-Z][a-zA-Z0-9_]*)\\b",
+          "captures": {
+            "1": {
+              "name": "keyword.definition.flint"
+            },
+            "2": {
+              "name": "identifier.type.flint"
+            }
+          }
+        },
+        {
+          "match": "\\b([a-z_][a-zA-Z0-9_]+)\\s*\\(",
+          "captures": {
+            "1": {
+              "name": "identifier.call.flint"
+            }
+          }
+        },
+        {
+          "match": "\\b([A-Z][a-zA-Z0-9_]+)\\s*\\(",
+          "captures": {
+            "1": {
+              "name": "identifier.initializer.flint"
+            }
+          }
+        },
+        {
+          "name": "identifier.type.flint",
+          "match": "[A-Z][a-zA-Z0-9_]*"
+        },
+        {
+          "name": "identifier.field.flint",
+          "match": "\\.[a-z_][a-zA-Z0-9_]*\\b(?!\\()"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.flint"
+}
