@@ -1,165 +1,114 @@
 {
   "name": "Flint Theme",
   "type": "dark",
-  "colors": {
-    "editor.foreground": "#eee8d5",
-    "editor.background": "#002B36"
-  },
   "tokenColors": [
     {
-      "scope": "keyword.control.flint",
+      "scope": "keyword.control",
       "settings": {
-        "foreground": "#6C71C4"
+        "foreground": "#E35C26", // Softer fiery red-orange
+        "fontStyle": "bold"
       }
     },
     {
-      "scope": "keyword.threading.flint",
+      "scope": "keyword.operator",
       "settings": {
-        "foreground": "#6C71C4"
+        "foreground": "#FF8256" // Less saturated orange for operators
       }
     },
     {
-      "scope": "keyword.return.flint",
+      "scope": "keyword.return",
       "settings": {
-        "foreground": "#d33682"
+        "foreground": "#FF5733", // Slightly softer red-orange for `return`
+        "fontStyle": "bold"
       }
     },
     {
-      "scope": "keyword.definition.flint",
+      "scope": "keyword.definition",
       "settings": {
-        "foreground": "#Cb4B16"
+        "foreground": "#C85A2E", // Muted reddish-orange for `def`, `data`
+        "fontStyle": "bold"
       }
     },
     {
-      "scope": "keyword.primitive.flint",
+      "scope": "keyword.primitive",
       "settings": {
-        "foreground": "#859900"
+        "foreground": "#CC7433" // Softer copper-orange for primitive types
       }
     },
     {
-      "scope": "constant.language.flint",
+      "scope": "storage.type",
       "settings": {
-        "foreground": "#b58900"
+        "foreground": "#E87440", // Less intense orange for `data`, `func`
+        "fontStyle": "bold"
       }
     },
     {
-      "scope": "constant.number.flint",
+      "scope": "entity.name.function",
       "settings": {
-        "foreground": "#b58900"
+        "foreground": "#E55B3C", // Slightly subdued orange for function names
+        "fontStyle": "bold"
       }
     },
     {
-      "scope": "symbols.separator.flint",
+      "scope": "entity.name.type",
       "settings": {
-        "foreground": "#93A1A1"
+        "foreground": "#D87C30", // Warmer orange for struct/class names
+        "fontStyle": "bold"
       }
     },
     {
-      "scope": "operator.pipe.flint",
+      "scope": "constant.language",
       "settings": {
-        "foreground": "#93A1A1"
+        "foreground": "#DB7033", // Softer orange for `true`, `false`
       }
     },
     {
-      "scope": "operator.arrow.flint",
+      "scope": "constant.numeric",
       "settings": {
-        "foreground": "#93A1A1"
+        "foreground": "#E06645" // Mellowed tomato red for numbers
       }
     },
     {
-      "scope": "operator.calculation.flint",
+      "scope": "comment",
       "settings": {
-        "foreground": "#93A1A1"
+        "foreground": "#8A8A8A", // Slightly lighter gray for readability
+        "fontStyle": "italic"
       }
     },
     {
-      "scope": "operator.comparison.flint",
+      "scope": "string.quoted",
       "settings": {
-        "foreground": "#93A1A1"
+        "foreground": "#FF9E7A" // Less saturated salmon for strings
       }
     },
     {
-      "scope": "operator.assignment.flint",
+      "scope": "variable.other",
       "settings": {
-        "foreground": "#93A1A1"
+        "foreground": "#C2573E" // Less intense burnt orange for variables
       }
     },
     {
-      "scope": "operator.declaration.flint",
+      "scope": "identifier.field",
       "settings": {
-        "foreground": "#93A1A1"
+        "foreground": "#BF593E" // Softer burnt orange for struct fields
       }
     },
     {
-      "scope": "comment.line.double-slash.flint",
+      "scope": "identifier.constant",
       "settings": {
-        "foreground": "#586E75"
+        "foreground": "#B05035" // Warmer red-orange for uppercase constants
       }
     },
     {
-      "scope": "comment.block.flint",
+      "scope": "operator",
       "settings": {
-        "foreground": "#586E75"
+        "foreground": "#C27B50" // Muted brown-orange for operators
       }
     },
     {
-      "scope": "comment.block.documentation.flint",
+      "scope": "punctuation",
       "settings": {
-        "foreground": "#586E75"
-      }
-    },
-    {
-      "scope": "constant.language.flint",
-      "settings": {
-        "foreground": "#33FF57"
-      }
-    },
-    {
-      "scope": "variable.other.flint",
-      "settings": {
-        "foreground": "#FFC300"
-      }
-    },
-    {
-      "scope": "string.quoted.double.flint",
-      "settings": {
-        "foreground": "#b58900"
-      }
-    },
-    {
-      "scope": "constant.numeric.flint",
-      "settings": {
-        "foreground": "#D700FF"
-      }
-    },
-    {
-      "scope": "identifier.type.flint",
-      "settings": {
-        "foreground": "#2AA198"
-      }
-    },
-    {
-      "scope": "identifier.initializer.flint",
-      "settings": {
-        "foreground": "#2AA198"
-      }
-    },
-    {
-      "scope": "identifier.call.flint",
-      "settings": {
-        "foreground": "#268BD2"
-      }
-    },
-    {
-      "scope": "identifier.field.flint",
-      "settings": {
-        "foreground": "#93A1A1"
-      }
-    },
-    {
-      "scope": "identifier.constant.flint",
-      "settings": {
-        "foreground": "#b58900"
+        "foreground": "#A5A5A5" // Slightly lighter gray for punctuation
       }
     }
   ]
