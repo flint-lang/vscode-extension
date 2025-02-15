@@ -11,9 +11,10 @@
   "repository": {
     "keywords": {
       "patterns": [
-        { "name": "keyword.control", "match": "\\b(if|else|do|while|for|switch|return|break|continue|parallel)\\b" },
+        { "name": "keyword.control", "match": "\\b(if|else|do|while|for|switch|return|break|continue)\\b" },
         { "name": "keyword.exception", "match": "\\b(throw|catch)\\b" },
-        { "name": "keyword.declaration", "match": "\\b(def|const|data|func|requires|entity|link|enum|variant|error)\\b" },
+        { "name": "keyword.declaration", "match": "\\b(def|data|func|requires|entity|link|enum|variant|error)\\b" },
+        { "name": "storage.modifier", "match": "\\b(const|aligned|shared|parallel)\\b" },
         { "name": "storage.type", "match": "\\b(int|flint|dflint|bool|str|char|fn|void|Opt|int2|int3|int4|flint2|flint3|flint4|dflint2|dflint3|dflint4|bool8)\\b" },
         { "name": "constant.language", "match": "\\b(true|false|None|Some)\\b" },
         { "name": "keyword.operator", "match": "\\b(and|or|not)\\b" }
@@ -30,13 +31,14 @@
     "comments": {
       "patterns": [
         { "name": "comment.line.double-slash", "begin": "//", "end": "$" },
-        { "name": "comment.block", "begin": "/\\*\\*", "end": "\\*/" }
+        { "name": "comment.block", "begin": "/\\*\\*", "end": "\\*/" },
+        { "name": "comment.line.number-sign", "match": "#[^\n]*" }
       ]
     },
     "symbols": {
       "patterns": [
         { "name": "punctuation.separator", "match": ",|;|:" },
-        { "name": "keyword.operator", "match": "\\+\\+|--|==|!=|<|>|<=|>=|\\+=|-=|\\*=|/=|:=|=|::|\\+|-|/|\\*|\\*\\*|<<|>>|\\|\\^|&|->|\\|>" }
+        { "name": "keyword.operator", "match": "\\+\\+|--|==|!=|<|>|<=|>=|\\+=|-=|\\*=|/=|:=|=|::|\\+|-|/|\\*\\*|\\*|<<|>>\\||\\^|&|->|\\|>" }
       ]
     },
     "identifiers": {
