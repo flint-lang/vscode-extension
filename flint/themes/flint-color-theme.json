@@ -5,61 +5,55 @@
     {
       "scope": "keyword.control",
       "settings": {
-        "foreground": "#E35C26", // Softer fiery red-orange
+        "foreground": "#ac2653",
         "fontStyle": "bold"
       }
     },
     {
       "scope": "keyword.operator",
       "settings": {
-        "foreground": "#FF8256" // Less saturated orange for operators
+        "foreground": "#A5A5A5" // Light grey for operators
       }
     },
     {
-      "scope": "keyword.return",
+      "scope": "keyword.declaration",
       "settings": {
-        "foreground": "#FF5733", // Slightly softer red-orange for `return`
+        "foreground": "#be2b2b", // Muted reddish-orange for `def`, `data`
         "fontStyle": "bold"
       }
     },
     {
-      "scope": "keyword.definition",
+      "scope": "storage.modifier",
       "settings": {
-        "foreground": "#C85A2E", // Muted reddish-orange for `def`, `data`
+        "foreground": "#be2b2b",
         "fontStyle": "bold"
       }
     },
     {
-      "scope": "keyword.primitive",
+      "scope": "storage.type", // primitive types
       "settings": {
-        "foreground": "#CC7433" // Softer copper-orange for primitive types
-      }
-    },
-    {
-      "scope": "storage.type",
-      "settings": {
-        "foreground": "#E87440", // Less intense orange for `data`, `func`
-        "fontStyle": "bold"
+        "foreground": "#ffbf66",
+        //"fontStyle": "bold"
       }
     },
     {
       "scope": "entity.name.function",
       "settings": {
-        "foreground": "#E55B3C", // Slightly subdued orange for function names
-        "fontStyle": "bold"
+        "foreground": "#00b5b5",
+        //"fontStyle": "bold"
       }
     },
     {
       "scope": "entity.name.type",
       "settings": {
-        "foreground": "#D87C30", // Warmer orange for struct/class names
+        "foreground": "#c46827", // Type names
         "fontStyle": "bold"
       }
     },
     {
       "scope": "constant.language",
       "settings": {
-        "foreground": "#DB7033", // Softer orange for `true`, `false`
+        "foreground": "#DAA520", // Softer orange for `true`, `false`
       }
     },
     {
@@ -78,13 +72,13 @@
     {
       "scope": "string.quoted",
       "settings": {
-        "foreground": "#FF9E7A" // Less saturated salmon for strings
+        "foreground": "#ffd57a" // Less saturated salmon for strings
       }
     },
     {
       "scope": "variable.other",
       "settings": {
-        "foreground": "#C2573E" // Less intense burnt orange for variables
+        "foreground": "#fffde6" // Less intense burnt orange for variables
       }
     },
     {
