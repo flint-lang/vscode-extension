@@ -14,16 +14,19 @@
     "type": "git",
     "url": "https://github.com/flint-lang/vscode-extension"},
   "contributes": {
+    "configuration": {
+      "properties": {
+        "[flint]": {
+          "editor.insertSpace": false,
+          "editor.tabSize": 4
+        }
+      }
+    },
     "languages": [
       {
         "id": "flint",
-        "aliases": [
-          "Flint",
-          "flint"
-        ],
-        "extensions": [
-          ".ft"
-        ],
+        "aliases": ["Flint", "flint"],
+        "extensions": [".ft"],
         "configuration": "./language-configuration.json"
       }
     ],
