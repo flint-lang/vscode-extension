@@ -2,7 +2,7 @@
   "name": "flint-syntax-highlighter",
   "displayName": "Flint Syntax Highligher",
   "description": "Syntax highlighting for the Flint programing language!",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.90.0"
   },
