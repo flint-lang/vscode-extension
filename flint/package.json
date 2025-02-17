@@ -15,7 +15,7 @@
     "url": "https://github.com/flint-lang/vscode-extension"},
   "contributes": {
     "configuration": {
-      "properties": {
+      "configurationDefaults": {
         "[flint]": {
           "editor.insertSpace": false,
           "editor.tabSize": 4

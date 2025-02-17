@@ -12,7 +12,7 @@
     "keywords": {
       "patterns": [
         { "name": "keyword.control", "match": "\\b(if|else|do|while|for|switch|return|break|continue|throw|catch|sync|spawn)\\b" },
-        { "name": "keyword.declaration", "match": "\\b(def|data|func|requires|entity|link|enum|variant|error)\\b" },
+        { "name": "keyword.declaration", "match": "\\b(use|def|data|func|requires|entity|link|enum|variant|error)\\b" },
         { "name": "storage.modifier", "match": "\\b(const|aligned|shared|parallel)\\b" },
         { "name": "storage.type", "match": "\\b(int|flint|dflint|bool|str|char|fn|void|Opt|int2|int3|int4|flint2|flint3|flint4|dflint2|dflint3|dflint4|bool8)\\b" },
         { "name": "constant.language", "match": "\\b(true|false|None|Some)\\b" },
