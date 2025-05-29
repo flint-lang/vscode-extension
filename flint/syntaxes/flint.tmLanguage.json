@@ -24,6 +24,14 @@
     "strings": {
       "patterns": [
         {
+          "name": "string.quoted.single",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            { "name": "constant.character.escape", "match": "\\\\." }
+          ]
+        },
+        {
           "name": "string.quoted.double",
           "begin": "\\$\"",
           "end": "\"",
