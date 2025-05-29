@@ -1,6 +1,15 @@
 {
   "name": "Flint Theme",
   "type": "dark",
+  "colors": {
+    "editorGroup.border": "#4f5d64",
+    "sideBar.background": "#373d4a",
+    "activityBar.background": "#2f343f",
+    "statusBar.background": "#2f343f",
+    "editor.background": "#1f2429",
+    "window.activeBorder": "#2f343f",
+    "window.inactiveBorder": "#4f5d64",
+  },
   "tokenColors": [
     {
       "scope": "keyword.control",
