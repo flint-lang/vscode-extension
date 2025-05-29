@@ -39,15 +39,22 @@
             { "name": "constant.character.escape", "match": "\\\\." },
             { 
               "begin": "\\{",
+              "beginCaptures": {
+                "0": { "name": "punctuation.section.embedded.begin.flint" }
+              },
               "end": "\\}",
+              "endCaptures": {
+                "0": { "name": "punctuation.section.embedded.end.flint" }
+              },
+              "contentName": "meta.embedded.line.flint",
               "patterns": [
                 { "include": "#keywords" },
+                { "include": "#numbers" },
                 { "include": "#identifiers" },
+                { "include": "#punctuation" },
                 { "include": "#symbols" },
                 { "include": "#comments" },
-                { "include": "#strings" },
-                { "include": "#numbers" },
-                { "include": "#punctuation" }
+                { "include": "#strings" }
               ]
             }
           ]
