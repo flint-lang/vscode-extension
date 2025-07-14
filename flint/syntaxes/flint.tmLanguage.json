@@ -13,11 +13,11 @@
   "repository": {
     "keywords": {
       "patterns": [
-        { "name": "keyword.control", "match": "\\b(if|else|do|while|for|in|switch|return|break|continue|throw|catch|orelse|sync|spawn|lock)\\b" },
+        { "name": "keyword.control", "match": "\\b(if|else|do|while|for|in|switch|return|break|continue|throw|catch|sync|async|spawn|lock)\\b" },
         { "name": "keyword.declaration", "match": "\\b(use|as|def|data|func|requires|entity|extends|link|enum|variant|error|test)\\b" },
         { "name": "storage.modifier", "match": "\\b(const|aligned|shared|parallel|persistent|mut)\\b" },
-        { "name": "storage.type", "match": "\\b(str|fn|bp|void|Opt|flint|bool|bool8|u8|i32|i64|u32|u64|i32x2|i32x3|i32x4|i32x8|i64x2|i64x3|i64x4|u32x2|u32x3|u32x4|u32x8|u64x2|u64x3|u64x4|f32|f64|f32x2|f32x3|f32x4|f32x8|f64x2|f64x3|f64x4)\\b" },
-        { "name": "constant.language", "match": "\\b(true|false|None|Some)\\b" },
+        { "name": "storage.type", "match": "\\b(str|fn|bp|void|bool|bool8|u8|i32|i64|u32|u64|i32x2|i32x3|i32x4|i32x8|i64x2|i64x3|i64x4|u32x2|u32x3|u32x4|u32x8|u64x2|u64x3|u64x4|f32|f64|f32x2|f32x3|f32x4|f32x8|f64x2|f64x3|f64x4)\\b" },
+        { "name": "constant.language", "match": "\\b(true|false|none)\\b" },
         { "name": "keyword", "match": "\\b(and|or|not)\\b" }
       ]
     },

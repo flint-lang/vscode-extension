@@ -1,8 +1,8 @@
 {
   "name": "flint-syntax-highlighter",
   "displayName": "Flint Syntax Highligher",
-  "description": "Syntax highlighting for the Flint programing language!",
-  "version": "0.0.9",
+  "description": "Syntax highlighting for the Flint programing language",
+  "version": "0.0.10",
   "engines": {
     "vscode": "^1.90.0"
   },
@@ -13,6 +13,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/flint-lang/vscode-extension"},
+  "icon": "logo.png",
   "contributes": {
     "configuration": {
       "configurationDefaults": {
