@@ -111,7 +111,7 @@
     },
     "numbers": {
       "name": "constant.number",
-      "match": "\\b\\d+\\.?\\d*\\b"
+      "match": "\\b\\d+(_\\d+)*(\\.\\d+(_\\d+)*)?\\b"
     },
     "punctuation": {
       "name": "punctuation.brackets",
