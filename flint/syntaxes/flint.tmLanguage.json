@@ -98,7 +98,9 @@
     "symbols": {
       "patterns": [
         { "name": "punctuation.separator", "match": ",|;|:|\\." },
-        { "name": "keyword.operator", "match": "\\+\\+|--|==|!=|<|>|<=|>=|\\+=|-=|\\*=|/=|:=|=|::|\\+|-|/|\\*\\*|\\*|<<|>>\\||\\^|&|->|\\|>|$[0-9]+|$|\\?\\." }
+        { "name": "keyword.operator", "match": "\\+\\+|--|==|!=|<=|>=|\\+=|-=|\\*=|/=|:=|=|<|>|::|\\+|-|\\*|/|!\\.|!|\\*|%|\\|>|\\?\\.|\\?\\?|\\?(?=\\()"},
+        { "name": "constant.other.tuple-access", "match": "\\$\\d+" },
+        { "name": "storage.type.optional", "match": "\\?" }
       ]
     },
     "identifiers": {
