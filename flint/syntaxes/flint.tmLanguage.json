@@ -74,8 +74,24 @@
     },
     "comments": {
       "patterns": [
-        { "name": "comment.line.double-slash", "begin": "//", "end": "$" },
-        { "name": "comment.block", "begin": "/\\*\\*", "end": "\\*/" },
+        { 
+          "name": "comment.line.double-slash", 
+          "begin": "//", 
+          "end": "$",
+          "patterns": [
+            { "name": "keyword.other.documentation", "match": "\\b(TODO|FIXME|NOTE|WARNING)\\b" },
+            { "name": "entity.other.attribute-name", "match": "@[A-Za-z]*" }
+          ]
+        },
+        { 
+          "name": "comment.block", 
+          "begin": "/\\*", 
+          "end": "\\*/",
+          "patterns": [
+            { "name": "keyword.other.documentation", "match": "\\b(TODO|FIXME|NOTE|WARNING)\\b" },
+            { "name": "entity.other.attribute-name", "match": "@[A-Za-z]*" }
+          ]
+        },
         { "name": "comment.line.number-sign", "match": "#[^\n]*" }
       ]
     },
