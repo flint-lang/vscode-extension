@@ -28,7 +28,11 @@
         "id": "flint",
         "aliases": ["Flint", "flint"],
         "extensions": [".ft"],
-        "configuration": "./language-configuration.json"
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "dark": "./icons/flint.svg",
+          "light": "./icons/flint.svg"
+        }
       }
     ],
     "grammars": [
