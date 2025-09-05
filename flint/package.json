@@ -1,8 +1,8 @@
 {
-  "name": "flint-syntax-highlighter",
-  "displayName": "Flint Syntax Highligher",
-  "description": "Syntax highlighting for the Flint programing language",
-  "version": "0.2.0",
+  "name": "flint-language-support",
+  "displayName": "Flint Language Support",
+  "description": "Syntax highlighting and Language Server support for the Flint programming language",
+  "version": "0.2.1",
   "engines": {
     "vscode": "^1.90.0"
   },
@@ -12,13 +12,34 @@
   "publisher": "zweiler1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/flint-lang/vscode-extension"},
+    "url": "https://github.com/flint-lang/vscode-extension"
+  },
   "icon": "logo.png",
+  "activationEvents": [
+    "onLanguage:flint"
+  ],
+  "main": "./src/extension.js",
+  "dependencies": {
+    "vscode-languageclient": "^9.0.0"
+  },
   "contributes": {
     "configuration": {
+      "title": "Flint",
+      "properties": {
+        "flint.languageServer.path": {
+          "type": "string",
+          "default": "fls",
+          "description": "Path to the Flint Language Server executable"
+        },
+        "flint.languageServer.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable Flint Language Server"
+        }
+      },
       "configurationDefaults": {
         "[flint]": {
-          "editor.insertSpace": false,
+          "editor.insertSpaces": false,
           "editor.tabSize": 4
         }
       }
@@ -26,8 +47,13 @@
     "languages": [
       {
         "id": "flint",
-        "aliases": ["Flint", "flint"],
-        "extensions": [".ft"],
+        "aliases": [
+          "Flint",
+          "flint"
+        ],
+        "extensions": [
+          ".ft"
+        ],
         "configuration": "./language-configuration.json",
         "icon": {
           "dark": "./icons/flint.svg",
