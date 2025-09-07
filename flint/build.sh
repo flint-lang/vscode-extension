@@ -17,4 +17,4 @@ fi
 echo "Packaging extension..."
 vsce package
 
-echo "Build complete! Generated: flint-language-support-0.2.1.vsix"
+echo "Build complete!"
