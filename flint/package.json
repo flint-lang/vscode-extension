@@ -1,8 +1,8 @@
 {
   "name": "flint-lsp",
-  "displayName": "Flint Language Support",
+  "displayName": "Flint Language Server",
   "description": "Syntax highlighting and Language Server support for the Flint programming language",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "engines": {
     "vscode": "^1.90.0"
   },
@@ -20,6 +20,7 @@
   ],
   "main": "./src/extension.js",
   "dependencies": {
+    "vsce": "^1.90.0",
     "vscode-languageclient": "^9.0.0"
   },
   "contributes": {
