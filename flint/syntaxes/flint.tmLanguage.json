@@ -18,7 +18,7 @@
         { "name": "keyword.preproc", "match": "\\b(use|as|type|requires|extends|link|hook)\\b"},
         { "name": "keyword.declaration", "match": "\\b(def|data|func|entity|enum|variant|error|test|extern|export)\\b" },
         { "name": "storage.modifier", "match": "\\b(const|aligned|shared|parallel|persistent|mut)\\b" },
-        { "name": "storage.type", "match": "\\b(str|fn|bp|void|bool|bool8|anyerror|u8|i32|i64|u32|u64|i32x2|i32x3|i32x4|i32x8|i64x2|i64x3|i64x4|u32x2|u32x3|u32x4|u32x8|u64x2|u64x3|u64x4|f32|f64|f32x2|f32x3|f32x4|f32x8|f64x2|f64x3|f64x4)\\b" },
+        { "name": "storage.type", "match": "\\b(str|fn|bp|void|bool|bool8|anyerror|u8|u16|u32|u64|i8|i16|i32|i64|i32x2|i32x3|i32x4|i32x8|i64x2|i64x3|i64x4|u32x2|u32x3|u32x4|u32x8|u64x2|u64x3|u64x4|f32|f64|f32x2|f32x3|f32x4|f32x8|f64x2|f64x3|f64x4)\\b" },
         { "name": "constant.language", "match": "\\b(true|false|none)\\b" },
         { "name": "keyword", "match": "\\b(and|or|not)\\b" }
       ]
@@ -100,7 +100,7 @@
     "symbols": {
       "patterns": [
         { "name": "punctuation.separator", "match": ",|;|:|\\." },
-        { "name": "keyword.operator", "match": "\\+\\+|--|==|!=|<=|>=|\\+=|-=|\\*=|/=|:=|=|<|>|::|\\+|-|\\*|/|!\\.|!|\\*|%|\\|>|\\?\\.|\\?\\?|\\?(?=\\()"},
+        { "name": "keyword.operator", "match": "\\+\\+|--|==|!=|<=|>=|\\+=|-=|\\*=|/=|:=|=|<|>|::|\\+|-|\\*|&|/|!\\.|!|\\*|%|\\|>|\\?\\.|\\?\\?|\\?(?=\\()"},
         { "name": "constant.other.tuple-access", "match": "\\$\\d+" },
         { "name": "storage.type.optional", "match": "\\?" }
       ]
