@@ -21,6 +21,10 @@ Syntax highlighting works without any further setup. If you want the `fls` to wo
 
 ## Release Notes
 
+- [0.3.2]:
+  - Added `i8`, `u16` and `i16` primitive types
+  - Removed `aligned` keyword highlighting
+  - Added the `opaque` type and `null` literal
 - [0.3.0]:
   - Added support for the LSP on Windows, it now works properly there too
   - Added support for the `as` keyword for import aliasing
