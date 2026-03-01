@@ -1,8 +1,7 @@
 { pkgs ? import <nixpkgs> {} }:
 
 pkgs.mkShell {
-  buildInputs = with pkgs; [
-  ];
+  buildInputs = with pkgs; [];
 
   shellHook = ''
     # Check if the 'flint-vscode-extension' image exists. If not, create it
