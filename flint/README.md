@@ -21,6 +21,8 @@ Syntax highlighting works without any further setup. If you want the `fls` to wo
 
 ## Release Notes
 
+- [0.3.4]:
+  - Added proper highlighting for referenced functions `::function_name`
 - [0.3.2]:
   - Added `i8`, `u16` and `i16` primitive types
   - Removed `aligned` keyword highlighting
