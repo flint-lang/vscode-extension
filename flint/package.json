@@ -16,7 +16,9 @@
   },
   "icon": "logo.png",
   "activationEvents": [
-    "onLanguage:flint"
+    "onLanguage:flint",
+    "onDebug",
+    "onDebugResolve:flint"
   ],
   "main": "./src/extension.js",
   "dependencies": {
@@ -36,6 +38,11 @@
           "type": "boolean",
           "default": true,
           "description": "Enable Flint Language Server"
+        },
+        "flint.debugAdapter.path": {
+          "type": "string",
+          "default": "lldb-dap",
+          "description": "Path to the lldb-dap executable used for debugging Flint programs"
         }
       },
       "configurationDefaults": {
@@ -74,6 +81,78 @@
         "label": "Flint Theme",
         "uiTheme": "vs-dark",
         "path": "./themes/flint-color-theme.json"
+      }
+    ],
+    "breakpoints": [
+      { "language": "flint" }
+    ],
+    "debuggers": [
+      {
+        "type": "flint",
+        "label": "Flint Debugger",
+        "languages": ["flint"],
+        "configurationAttributes": {
+          "launch": {
+            "required": ["program"],
+            "properties": {
+              "program": {
+                "type": "string",
+                "description": "Path to the compiled Flint executable"
+              },
+              "args": {
+                "type": "array",
+                "items": { "type": "string" },
+                "description": "Command-line arguments passed to the program"
+              },
+              "cwd": {
+                "type": "string",
+                "description": "Working directory for the debugged program"
+              },
+              "stopOnEntry": {
+                "type": "boolean",
+                "description": "Break immediately when the program starts"
+              },
+              "sourcePath": {
+                "type": "string",
+                "description": "Root path for resolving relative source paths in debug info"
+              },
+              "debuggerRoot": {
+                "type": "string",
+                "description": "Working directory for lldb-dap"
+              },
+              "sourceMap": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "minItems": 2,
+                  "maxItems": 2,
+                  "items": { "type": "string" }
+                },
+                "description": "Source path mappings from compile-time to local paths: [[\"/build/path\", \"/local/path\"]]"
+              },
+              "initCommands": {
+                "type": "array",
+                "items": { "type": "string" },
+                "description": "LLDB commands executed on startup"
+              }
+            }
+          }
+        },
+        "configurationSnippets": [
+          {
+            "label": "Flint: Launch",
+            "body": {
+              "type": "flint",
+              "request": "launch",
+              "name": "Launch Flint Program",
+              "program": "${command:flint.debugAskForProgram}",
+              "args": [],
+              "cwd": "${workspaceFolder}",
+              "stopOnEntry": true
+            }
+          }
+        ],
+        "adapterExecutableCommand": "flint.debugAdapterExecutable"
       }
     ]
   }

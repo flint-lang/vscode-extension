@@ -36,9 +36,112 @@ function tryPathVariants(userPath) {
   return null;
 }
 
+function injectDebugDefaults(folder, config) {
+  if (folder) {
+    const fsPath = folder.uri.fsPath;
+    if (!config.sourcePath) config.sourcePath = fsPath;
+    if (!config.debuggerRoot) config.debuggerRoot = fsPath;
+  }
+  if (!config.initCommands) {
+    config.initCommands = ["settings set target.inline-breakpoint-strategy always"];
+  }
+  return config;
+}
+
 function activate(context) {
   const out = vscode.window.createOutputChannel("Flint Language Server");
   const config = vscode.workspace.getConfiguration("flint");
+
+  // ---- Debug Adapter Protocol support via lldb-dap ----
+
+  context.subscriptions.push(
+    vscode.debug.registerDebugConfigurationProvider("flint", {
+      provideDebugConfigurations(folder) {
+        return [
+          {
+            type: "flint",
+            name: "Launch Flint Program",
+            request: "launch",
+            program: "${command:flint.debugAskForProgram}",
+            args: [],
+            cwd: "${workspaceFolder}",
+            stopOnEntry: true,
+          },
+        ];
+      },
+      resolveDebugConfiguration(folder, debugConfiguration) {
+        if (!debugConfiguration || !debugConfiguration.type) {
+          debugConfiguration = {
+            type: "flint",
+            name: "Launch Flint Program",
+            request: "launch",
+            args: [],
+            cwd: "${workspaceFolder}",
+            stopOnEntry: false,
+          };
+        }
+        if (!debugConfiguration.program) {
+          return vscode.window.showInputBox({
+            prompt: "Enter the path to the compiled Flint executable",
+            placeHolder: "/path/to/compiled/flint/program",
+          }).then((program) => {
+            if (!program) return undefined;
+            debugConfiguration.program = program;
+            return injectDebugDefaults(folder, debugConfiguration);
+          });
+        }
+        return injectDebugDefaults(folder, debugConfiguration);
+      },
+    })
+  );
+
+  context.subscriptions.push(
+    vscode.commands.registerCommand("flint.debugAdapterExecutable", () => {
+      const cfg = vscode.workspace.getConfiguration("flint");
+      let dapPath = cfg.get("debugAdapter.path", "lldb-dap");
+      let resolved = null;
+
+      const looksLikePath =
+        path.isAbsolute(dapPath) || dapPath.includes(path.sep) || dapPath.includes("/");
+      if (looksLikePath) resolved = tryPathVariants(dapPath);
+
+      if (!resolved) resolved = findOnPath(dapPath);
+
+      if (!resolved) {
+        const candidates = ["/usr/bin/lldb-dap", "/usr/local/bin/lldb-dap"];
+        if (process.platform === "win32") {
+          const pf = process.env["ProgramFiles"] || "C:\\Program Files";
+          candidates.push(path.join(pf, "LLVM", "bin", "lldb-dap.exe"));
+        }
+        for (const c of candidates) {
+          const t = tryPathVariants(c);
+          if (t) {
+            resolved = t;
+            break;
+          }
+        }
+      }
+
+      if (!resolved) {
+        vscode.window.showErrorMessage(
+          "Flint Debugger: couldn't find 'lldb-dap'. Set 'flint.debugAdapter.path' in settings."
+        );
+        throw new Error("lldb-dap not found");
+      }
+
+      return new vscode.DebugAdapterExecutable(resolved, []);
+    })
+  );
+
+  context.subscriptions.push(
+    vscode.commands.registerCommand("flint.debugAskForProgram", async () => {
+      return await vscode.window.showInputBox({
+        prompt: "Enter the path to the compiled Flint executable",
+        placeHolder: "/path/to/compiled/flint/program",
+      });
+    })
+  );
+
   const enabled = config.get("languageServer.enabled", true);
 
   if (!enabled) {
