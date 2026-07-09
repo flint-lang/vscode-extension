@@ -21,6 +21,8 @@ Syntax highlighting works without any further setup. If you want the `fls` to wo
 
 ## Release Notes
 
+- [0.4.0]:
+  - Added DAP support, enabling breakpoints, code stepping and general debug support
 - [0.3.5]:
   - Added new multi-type variations: `i8x2`, `i8x3`, `i8x4`, `i8x8`, `u16x2`, `u16x3`, `u16x4`, `u16x8`, `i16x2`, `i16x3`, `i16x4`, `i16x8`, `u32x2`, `u32x3`, `u32x4`, `u32x8`, `u64x2`, `u64x3`, `u64x4`
 - [0.3.4]:
