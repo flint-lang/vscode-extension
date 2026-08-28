@@ -21,6 +21,9 @@ Syntax highlighting works without any further setup. If you want the `fls` to wo
 
 ## Release Notes
 
+- [0.4.1]:
+  - Removed keywords: `entity`, `extends`, `link`, `hook`
+  - Added keywords: `object`, `interface`, `implements`
 - [0.4.0]:
   - Added DAP support, enabling breakpoints, code stepping and general debug support
 - [0.3.5]:
